@@ -1,0 +1,23 @@
+{
+    "name": "bzis/daemon-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "keywords": ["daemon"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "symfony/framework-bundle": ">=2.1,<3.0",
+        "ext-pcntl": "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "zis\\DaemonBundle": "" }
+    },
+    "target-dir": "zis/DaemonBundle",
+    "authors": [
+        {
+            "name": "Boris Ziskin",
+            "email": "bmziskin@gmail.com"
+        }
+    ]
+}
