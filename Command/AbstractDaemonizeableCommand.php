@@ -39,7 +39,7 @@ abstract class AbstractDaemonizeableCommand extends ContainerAwareCommand
         posix_setsid();
 
         $this->addSigHandler(SIGTERM, [$this, 'sigHandler']);
-        $this->addSigHandler(SIGTERM, [$this, 'sigHandler']);
+        $this->addSigHandler(SIGCHLD, [$this, 'sigHandler']);
     }
 
     /**
@@ -97,7 +97,7 @@ abstract class AbstractDaemonizeableCommand extends ContainerAwareCommand
      * @param null $pid
      * @param null $status
      */
-    final protected function sigHandler($signo, $pid = null, $status = null)
+    final public function sigHandler($signo, $pid = null, $status = null)
     {
         switch ($signo) {
             case SIGTERM:
