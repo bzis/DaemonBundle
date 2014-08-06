@@ -26,7 +26,7 @@ abstract class AbstractDaemonizeableCommand extends ContainerAwareCommand
     /**
      * демонизация команды
      */
-    private function daemonize()
+    protected function daemonize()
     {
         // Создаем дочерний процесс
         // весь код после pcntl_fork() будет выполняться двумя процессами: родительским и дочерним
