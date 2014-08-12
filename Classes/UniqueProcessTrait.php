@@ -51,6 +51,17 @@ trait UniqueProcessTrait
         file_put_contents($this->pidFile, getmypid());
     }
 
+    /**
+     *
+     */
+    public function unlinkPidFile()
+    {
+        if (!$this->pidFile) {
+            throw new \Exception('Set pid file location');
+        }
+        if (is_file($this->pidFile)) {
+            unlink($this->pidFile);
+        }
+    }
 
-
-} 
+}
